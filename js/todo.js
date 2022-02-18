@@ -1,5 +1,5 @@
 const toDoForm = document.getElementById("todo-form");
-const toDoInput = toDoForm.querySelector("input");
+const toDoInput = document.querySelector("#todo-form input");
 const toDoList = document.getElementById("todo-list");
 
 const TODOS_KEY = "todos";
@@ -31,9 +31,9 @@ function paintToDo(newTodo) {
 }
 
 function handleToDoSubmit(event) {
-	event.preventDefault(); // 새로고침을 막고
-	const newTodo = toDoInput.value; // submit하는 텍스트를 저장하고  <-- input의 현재 value를 새로운 변수에 복사함.그 다음 하는것은 newToDo 변수와는 아무 상관이 없어.
-	toDoInput.value = ""; // 텍스트상자 안의 텍스트를 초기화시켰다.
+	event.preventDefault();
+	const newTodo = toDoInput.value;
+	toDoInput.value = "";
 	const newTodoObj = {
 		text: newTodo,
 		id: Date.now(),
